@@ -1,9 +1,13 @@
-# CSCI 6509 Winter Term Project
+# Arbeitsprobe Alexander Heinz
 
 ## Title: Deep Language Model Representation of Document Clustering
 
-### Abstract : 
-Powerful document clustering models are essential as they can efficiently process large sets of documents. These models can be helpful in many fields, including general research. Searching through large corpora of publications can be a slow and tedious task; such models can significantly reduce this time. We investigated different variations of a pre-trained BERT model to find which is best able to produce word embeddings to represent documents within a larger corpus. These embeddings are reduced in dimensionality using PCA and clustered with K-Means to gain insight into which model can best differentiate the topics within a corpus. We found that SBERT was the best model for this task out of the tested BERT variations.
+### Abstract (automatisch erstellt): 
+Dieses Notebook umfasst einen vollständigen Workflow zur Verarbeitung und Analyse von Textdaten mit Hilfe von Natural Language Processing (NLP) und Machine Learning Methoden, insbesondere unter Verwendung von BERT- und BERTopic-Modellen. Der Prozess beginnt mit dem Import der erforderlichen Bibliotheken und der Installation der benötigten Pakete. Nach dem Einlesen der Daten aus einer Excel-Datei folgt die Datenvorbereitung, die verschiedene Schritte wie das Entfernen von Stoppwörtern, Tokenisierung und Lemmatisierung beinhaltet, wobei die Notwendigkeit dieser Schritte im Kontext von BERT diskutiert wird.
+
+Die explorative Datenanalyse (EDA) umfasst die Visualisierung der Textlängenverteilung. Anschließend wird die Kosinusähnlichkeit der Dokumente berechnet und als Heatmap dargestellt. Das Clustering der Texte erfolgt mittels K-Means, wobei die optimale Anzahl der Cluster durch die Elbow-Methode bestimmt wird. Die Cluster werden durch eine PCA-Reduktion auf zwei Dimensionen visualisiert.
+
+Für das Clustering und die Themenmodellierung wird das BERTopic-Modell verwendet und mit einem manuellen Ansatz verglichen. Dieses Modell nutzt Transformer-basierte Embeddings, UMAP für die Dimensionalitätsreduktion und HDBSCAN für die Clusterbildung, gefolgt von c-TF-IDF zur Reduktion und Verbesserung der Topic-Kohärenz. Die resultierenden Themen werden visualisiert und die Dokumente entsprechend den identifizierten Themen geclustert. Schließlich werden die Ergebnisse in einer Excel-Datei gespeichert und visualisiert, um eine detaillierte Überprüfung und weitere Analysen zu ermöglichen.
 
 
 
@@ -18,8 +22,4 @@ Powerful document clustering models are essential as they can efficiently proces
 
     `pip install -r requirements.txt`
 
-* Python Notebook:  There are two python notebooks :[1] NLP_Final_Project_Code.ipynb and [2] BERT Cosine Similarity Test.ipynb
-
-     *  The NLP_Final_Project_Code.ipynb contains the code base for evaluating the BERT textual embeddings for clustering. We have used PCA for dimensionality reduction and K-Means for clustering. The embeddings are calculated separately and stored in the CSV file in the **./data** folder. 
-     
-     * In BERT Cosine Similarity Test.ipynb, we are testing the ability of BERT embedding to capture the similarity between the documents. For this, we manually grouped files based on their content 1) Group of similar files and 2) Group of dissimilar files. Then we measured the cosine similarity between each group. We hypothesized that BERT embeddings could detect similarities among the document based on their pretrained representation. We also evaluated SBERT, which proved to provide a better representation than BERT's different variants. 
+* Python Notebook:  `Arbeitsprobe_Alexander_Heinz.ipynb`
